@@ -1,0 +1,310 @@
+@import "colores";
+
+@mixin Titulos {
+	width: 100%;
+	margin: 10px;
+	background-color: $VerdeOscuro;
+	font-family:'Oswald', sans-serif;
+	font-weight: 400;
+	font-size: 80px;
+	text-align: center;
+	text-transform:uppercase;
+	color: $Fondo;
+	justify-content:center; 
+}
+
+@mixin Subtitulos {
+	font-family:'Oswald', sans-serif;
+	font-weight: 400;
+	font-size: 45px;
+	text-align: center;
+	text-transform: uppercase;
+	color: $Naranja;	
+}
+
+@mixin TablaBorde {
+	border: solid 5px $Fondo;
+}
+
+@media screen and (max-width: 480px) {
+	.Item-Oculto{
+	display:none;
+		}
+	}
+
+@media screen and (min-width: 780px) {
+	.Item-Mini{
+		display:none;
+		}
+	}
+
+body{
+	background-color:$Fondo;
+}
+
+a{
+	text-decoration: none;
+	color:$VerdeOscuro;
+}
+
+a:hover{
+	color: $Naranja;
+}
+
+.Bordes:hover{
+  border: 5px solid $VerdeOscuro;
+}
+
+.Bordes{
+	border: solid 5px $Naranja;
+	margin:2px;
+}
+
+.Footer{
+	background-color: $VerdeOscuro;
+	margin-top:20px;
+	margin: 10px;
+	justify-content: center;
+	text-align: center;
+	padding: 0%;
+	
+	.Footer__Img{
+		margin-top: 2%;
+	}
+	
+	.Footer__Texto{
+		color: $Fondo;
+		font-family:'Roboto', sans-serif;
+		font-weight: 400;
+		font-size: 15px;
+		text-align: center;	
+	}
+}
+
+#Footer--Galeria{
+	margin-top: 5%;
+}
+
+/*NAVBAR*/
+
+.EstiloNav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	background-color:$Fondo;
+    font-family:'Roboto', sans-serif;
+}
+
+.EstiloNav__Ul{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.EstiloNav__Ul--Green{
+	color:$VerdeOscuro;
+}
+
+li{
+	padding: 10px;
+	display: inline;
+	margin:0px 10px;
+}
+
+/*CLASES INDEX*/
+
+.Index{
+	background-image: url(../img/img0.jpg);
+	background-size: cover;
+	width: 100%;
+	height: 500px;
+	justify-content: center;
+ 	align-items: center;
+	
+	 .Index__Box{
+		border: solid 10px $Fondo;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		.Index__Box--Titulo{
+			margin: 5%;
+			font-family:'Oswald', sans-serif;
+			font-weight: 700;
+			font-size: 80px;
+			text-align: center;
+			text-transform:uppercase;
+			color:$Fondo; 
+			-webkit-text-stroke: 2px #2a2e30;
+		}
+	}
+}
+
+.SubtituloIndex{
+	@include Subtitulos;
+	margin-top: 3%;
+}
+
+.TextoIndex{
+	margin-top: 2%;
+	font-family:'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	text-align: center;	
+	color: $Texto;
+}
+
+.ImgLinkIndex{
+	display: flex;
+	width: 100%;
+    display: flex;
+    justify-content: center;
+	margin-top: 15px;
+
+	.ImgLinkIndex__Box{
+		display: flex;
+		justify-content: center;
+
+		.ImgLinkIndex__Box--Item{
+			margin:15px;
+		}
+	}
+}
+
+
+/*CLASES GALERIA*/
+
+.TituloGaleria{
+	@include Titulos;
+}
+
+.SubtituloGaleria{
+	@include Subtitulos;
+	margin-top:3%;
+	margin-bottom: 3%;
+	justify-content:center;	 
+}
+
+.Galeria{
+	background-color: $VerdeOscuro;
+}
+
+.Galeria__Carousel{
+	margin-top: 3%;
+	margin-bottom: 5%;
+}
+
+#AnchoCarousel{
+	width: 500px;;
+}
+
+/*NOSOTAS*/
+
+.Nosotras{
+	background-color: $VerdeOscuro;
+
+	.Nosotras__Titulo{
+		margin-top: 10px;
+		width:100%;
+		justify-content: center;
+		font-family:'Oswald', sans-serif;
+		font-weight: 400;
+		font-size: 80px;
+		text-align: center;
+		text-transform:uppercase;
+		color:$Fondo;
+	}
+}
+
+.Nosotras__Subtitulo{
+	@include Subtitulos;
+	margin-top: 10%;
+	font-size: 60px;
+}
+
+.ContenedorNos{
+	display: flex;
+}
+
+.ImgNos{
+	width: 45%;
+	padding:0%;
+	margin-top: 4%;
+	margin-bottom: 3%;
+}
+
+.Item-Mini{
+	width: 90%;
+	padding: 0%;
+}
+.TextoNos{
+	font-family:'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	text-align: center;
+	color:$Texto;
+	padding: 0%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+/*SERVICIO*/
+
+.Servicio__Titulo{
+	@include Titulos;
+	justify-content: center;
+	margin-top: 2%;
+	padding: 0%;
+}
+
+.Servicio__Subtitulo{
+	@include Subtitulos;
+	margin-top:3%;
+	margin-bottom: 3%;
+	padding: 0%;
+	justify-content:center;	
+}
+
+.Servicio__Texto{
+	margin-top: 10%;
+	display: flex;
+	font-family:'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	text-align: center;	
+	color:$Texto;
+	
+}
+
+.Servicio__BoxImg{
+	margin-top: 0%;
+	padding: 0%;
+}
+
+/*PEDI MUCHIA*/
+
+.PediMuchaBox{
+	justify-content: center;
+	background-color: $Fondo;
+}
+
+.PediMuchaBox__Subtitulo{
+	@include Subtitulos;
+	margin-top: 2%;
+	margin-bottom: 4%;
+} 
+.PediMuchaBox__Titulo{
+	@include Titulos;
+	
+}
+
+.Formulario{
+	margin-bottom: 10%;
+	padding: 0%;
+}
+
+.EstiloMapa{
+	width: 90%;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
