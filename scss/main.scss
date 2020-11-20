@@ -20,7 +20,7 @@ body {
 @mixin Subtitulos {
 	font-family:'Oswald', sans-serif;
 	font-weight: 400;
-	font-size: 45px;
+	font-size: 40px;
 	text-align: center;
 	text-transform: uppercase;
 	color: $Naranja;	
@@ -139,7 +139,6 @@ li{
 			text-align: center;
 			text-transform:uppercase;
 			color:$Fondo; 
-			-webkit-text-stroke: 2px #2a2e30;
 		}
 	}
 }
@@ -151,6 +150,8 @@ li{
 
 .TextoIndex{
 	margin-top: 2%;
+	margin-left: 3%;
+	margin-right: 3%;
 	font-family:'Roboto', sans-serif;
 	font-weight: 400;
 	font-size: 20px;
@@ -222,8 +223,8 @@ li{
 
 .Nosotras__Subtitulo{
 	@include Subtitulos;
-	margin-top: 10%;
-	font-size: 60px;
+	margin-top: 7%;
+	font-size: 40px;
 }
 
 .ContenedorNos{
@@ -250,6 +251,8 @@ li{
 	padding: 0%;
 	margin-top: 3%;
 	margin-bottom: 3%;
+	margin-left: 3%;
+	margin-right: 3%;
 }
 
 /*SERVICIO*/
@@ -265,12 +268,16 @@ li{
 	@include Subtitulos;
 	margin-top:3%;
 	margin-bottom: 3%;
+	margin-left: 3%;
+	margin-right: 3%;
 	padding: 0%;
 	justify-content:center;	
 }
 
 .Servicio__Texto{
 	margin-top: 10%;
+	margin-left: 3%;
+	margin-right: 3%;
 	display: flex;
 	font-family:'Roboto', sans-serif;
 	font-weight: 400;
