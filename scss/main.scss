@@ -66,17 +66,22 @@ a:hover{
 
 .Footer{
 	background-color: $VerdeOscuro;
-	margin-top:20px;
-	margin: 10px;
+	margin: 0%;
 	justify-content: center;
 	text-align: center;
 	padding: 0%;
+	
+	.Footer__Row{
+		margin: 0%;
+		padding: 0%;
+	}
 	
 	.Footer__Img{
 		margin-top: 2%;
 	}
 	
 	.Footer__Texto{
+		margin-top: 1%;
 		color: $Fondo;
 		font-family:'Roboto', sans-serif;
 		font-weight: 400;
@@ -84,6 +89,7 @@ a:hover{
 		text-align: center;	
 	}
 }
+
 
 #Footer--Galeria{
 	margin-top: 5%;

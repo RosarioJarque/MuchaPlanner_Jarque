@@ -28,14 +28,17 @@ a:hover {
 
 .Footer {
   background-color: #7c9e4f;
-  margin-top: 20px;
-  margin: 10px;
+  margin: 0%;
   justify-content: center;
   text-align: center;
   padding: 0%; }
+  .Footer .Footer__Row {
+    margin: 0%;
+    padding: 0%; }
   .Footer .Footer__Img {
     margin-top: 2%; }
   .Footer .Footer__Texto {
+    margin-top: 1%;
     color: #faf7f2;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
