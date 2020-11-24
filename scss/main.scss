@@ -263,6 +263,10 @@ li{
 
 /*SERVICIO*/
 
+.Servicio{
+	background-color: $VerdeOscuro;
+}
+
 .Servicio__Titulo{
 	@include Titulos;
 	justify-content: center;
@@ -299,6 +303,10 @@ li{
 }
 
 /*PEDI MUCHIA*/
+
+.PediMucha{
+	background-color: $VerdeOscuro;
+}
 
 .PediMuchaBox{
 	justify-content: center;

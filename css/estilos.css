@@ -205,6 +205,9 @@ li {
   margin-right: 3%; }
 
 /*SERVICIO*/
+.Servicio {
+  background-color: #7c9e4f; }
+
 .Servicio__Titulo {
   width: 100%;
   margin: 10px;
@@ -250,6 +253,9 @@ li {
   padding: 0%; }
 
 /*PEDI MUCHIA*/
+.PediMucha {
+  background-color: #7c9e4f; }
+
 .PediMuchaBox {
   justify-content: center;
   background-color: #faf7f2; }
