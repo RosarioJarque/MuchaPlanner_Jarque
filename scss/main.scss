@@ -5,7 +5,6 @@ body {
 @import "colores";
 
 @mixin Titulos {
-	width: 100%;
 	margin: 10px;
 	background-color: $VerdeOscuro;
 	font-family:'Oswald', sans-serif;
@@ -24,10 +23,6 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	color: $Naranja;	
-}
-
-@mixin TablaBorde {
-	border: solid 5px $Fondo;
 }
 
 @media screen and (max-width: 480px) {
@@ -140,7 +135,7 @@ li{
 		.Index__Box--Titulo{
 			margin: 5%;
 			font-family:'Oswald', sans-serif;
-			font-weight: 700;
+			font-weight: 400;
 			font-size: 80px;
 			text-align: center;
 			text-transform:uppercase;
