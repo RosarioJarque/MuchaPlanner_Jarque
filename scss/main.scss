@@ -25,6 +25,14 @@ body {
 	color: $Naranja;	
 }
 
+@mixin Textos {
+	font-family:'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	text-align: center;
+	color: $Texto; 
+}
+
 @media screen and (max-width: 480px) {
 	.Item-Oculto{
 	display:none;
@@ -37,6 +45,12 @@ body {
 		}
 	}
 
+@media screen and (max-width: 480px) {
+	.Mapa{
+		margin-left: 8%;
+		}
+	}
+	
 body{
 	background-color:$Fondo;
 }
@@ -61,10 +75,11 @@ a:hover{
 
 .Footer{
 	background-color: $VerdeOscuro;
-	margin: 0%;
+	margin-top: 5%;
 	justify-content: center;
 	text-align: center;
 	padding: 0%;
+	
 	
 	.Footer__Row{
 		margin: 0%;
@@ -83,11 +98,6 @@ a:hover{
 		font-size: 15px;
 		text-align: center;	
 	}
-}
-
-
-#Footer--Galeria{
-	margin-top: 5%;
 }
 
 /*NAVBAR*/
@@ -150,14 +160,10 @@ li{
 }
 
 .TextoIndex{
+	@include Textos;
 	margin-top: 2%;
 	margin-left: 3%;
 	margin-right: 3%;
-	font-family:'Roboto', sans-serif;
-	font-weight: 400;
-	font-size: 20px;
-	text-align: center;	
-	color: $Texto;
 }
 
 .ImgLinkIndex{
@@ -244,11 +250,7 @@ li{
 	padding: 0%;
 }
 .TextoNos{
-	font-family:'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 20px;
-	text-align: center;
-	color:$Texto;
+	@include Textos;
 	padding: 0%;
 	margin-top: 3%;
 	margin-bottom: 3%;
@@ -265,13 +267,13 @@ li{
 .Servicio__Titulo{
 	@include Titulos;
 	justify-content: center;
-	margin-top: 2%;
+	margin-top: 0%;
 	padding: 0%;
 }
 
 .Servicio__Subtitulo{
 	@include Subtitulos;
-	margin-top:3%;
+	margin-top: 3%;
 	margin-bottom: 3%;
 	margin-left: 3%;
 	margin-right: 3%;
@@ -280,20 +282,16 @@ li{
 }
 
 .Servicio__Texto{
+	@include Textos;
 	margin-top: 10%;
 	margin-left: 3%;
 	margin-right: 3%;
-	display: flex;
-	font-family:'Roboto', sans-serif;
-	font-weight: 400;
-	font-size: 20px;
-	text-align: center;	
-	color:$Texto;
-	
+	display: flex;	
 }
 
 .Servicio__BoxImg{
-	margin-top: 0%;
+	margin-top: 3%;
+	margin-bottom: 3%;
 	padding: 0%;
 }
 
