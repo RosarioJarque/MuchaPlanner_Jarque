@@ -33,23 +33,21 @@ body {
 	color: $Texto; 
 }
 
-@media screen and (max-width: 400px) and (orientation: landscape) {
+@media screen and (max-width: 877px){
 	.Index-Oculto{
-	display:none;
+		display:none;
 		}
 	}
 
 @media screen and (max-width: 717px) and (orientation: landscape) {
 	.Servicio-Oculto{
-	display:none;
+		display:none;
 		}
 	}
 
-
-
-@media screen and (max-width: 990px) and (orientation: landscape) {
+@media screen and (max-width: 990px){
 	.Nosotras-Oculto{
-	display:none;
+		display:none;
 		}
 	}
 
@@ -59,7 +57,6 @@ body {
 		}
 	}
 
-	
 @media screen and (max-width: 480px) {
 	.Mapa{
 		margin-left: 8%;
@@ -151,12 +148,12 @@ li{
 	justify-content: center;
  	align-items: center;
 	
-	 .Index__Box{
+	.Index__Box{
 		border: solid 10px $Fondo;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
+			
 		.Index__Box--Titulo{
 			margin: 5%;
 			font-family:'Oswald', sans-serif;
@@ -201,28 +198,24 @@ li{
 
 /*CLASES GALERIA*/
 
-.TituloGaleria{
-	@include Titulos;
+.Galeria{
+	background-color: $VerdeOscuro;
+
+	.Galeria__Titulo{
+		@include Titulos;
+	}
 }
 
-.SubtituloGaleria{
+.Galeria__Subtitulo{
 	@include Subtitulos;
 	margin-top:3%;
 	margin-bottom: 3%;
 	justify-content:center;	 
 }
 
-.Galeria{
-	background-color: $VerdeOscuro;
-}
-
 .Galeria__Carousel{
 	margin-top: 3%;
 	margin-bottom: 5%;
-}
-
-#AnchoCarousel{
-	width: 500px;;
 }
 
 /*NOSOTAS*/
@@ -243,14 +236,14 @@ li{
 	}
 }
 
+.ContenedorNos{
+	display: flex;
+}
+
 .Nosotras__Subtitulo{
 	@include Subtitulos;
 	margin-top: 7%;
 	font-size: 40px;
-}
-
-.ContenedorNos{
-	display: flex;
 }
 
 .ImgNos{
@@ -260,10 +253,6 @@ li{
 	margin-bottom: 3%;
 }
 
-.Item-Mini{
-	width: 90%;
-	padding: 0%;
-}
 .TextoNos{
 	@include Textos;
 	padding: 0%;
@@ -273,17 +262,22 @@ li{
 	margin-right: 3%;
 }
 
+.Item-Mini{
+	width: 90%;
+	padding: 0%;
+}
+
 /*SERVICIO*/
 
 .Servicio{
 	background-color: $VerdeOscuro;
-}
 
-.Servicio__Titulo{
-	@include Titulos;
-	justify-content: center;
-	margin-top: 0%;
-	padding: 0%;
+	.Servicio__Titulo{
+		@include Titulos;
+		justify-content: center;
+		margin-top: 0%;
+		padding: 0%;
+	}
 }
 
 .Servicio__Subtitulo{
@@ -304,32 +298,25 @@ li{
 	display: flex;	
 }
 
-.Servicio__BoxImg{
-	margin-top: 3%;
-	margin-bottom: 3%;
-	padding: 0%;
-}
-
-/*PEDI MUCHIA*/
-
-.PediMucha{
-	background-color: $VerdeOscuro;
-}
+/*PEDI MUCHA*/
 
 .PediMuchaBox{
 	justify-content: center;
-	background-color: $Fondo;
 }
 
-.PediMuchaBox__Subtitulo{
+.PediMucha{
+	background-color: $VerdeOscuro;
+
+	.PediMucha__Titulo{
+		@include Titulos;	
+	}
+}
+
+.PediMucha__Subtitulo{
 	@include Subtitulos;
 	margin-top: 2%;
 	margin-bottom: 4%;
 } 
-.PediMuchaBox__Titulo{
-	@include Titulos;
-	
-}
 
 .Formulario{
 	margin-bottom: 10%;
