@@ -1,11 +1,11 @@
 body {
   overflow-x: hidden; }
 
-@media screen and (max-width: 717px) {
+@media screen and (max-width: 717px) and (orientation: landscape) {
   .Index-Oculto {
     display: none; } }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 990px) and (orientation: landscape) {
   .Nosotras-Oculto {
     display: none; } }
 
