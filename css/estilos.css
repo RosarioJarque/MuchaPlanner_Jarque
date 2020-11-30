@@ -1,11 +1,15 @@
 body {
   overflow-x: hidden; }
 
-@media screen and (max-width: 480px) {
-  .Item-Oculto {
+@media screen and (max-width: 717px) {
+  .Index-Oculto {
     display: none; } }
 
-@media screen and (min-width: 780px) {
+@media screen and (max-width: 990px) {
+  .Nosotras-Oculto {
+    display: none; } }
+
+@media screen and (min-width: 989px) {
   .Item-Mini {
     display: none; } }
 
