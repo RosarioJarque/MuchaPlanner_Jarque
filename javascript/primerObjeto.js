@@ -24,7 +24,7 @@ class LogIn{
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
-        this.info = ` Hola ${ this.nombre}  ${this.apellido} en las proximas horas te enviaremos un mail a ${this.correo}`;   
+        this.info = `Hola ${ this.nombre}  ${this.apellido} en las proximas horas te enviaremos un mail a ${this.correo}`;   
         }
        
         comunicado(){
