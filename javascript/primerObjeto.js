@@ -1,5 +1,5 @@
 
-// MI IDEA PARA EL PROYECTO ES CREAR UN PRESUPUESTADOR INTERACTIVO
+// MI IDEA PARA EL PROYECTO ES CREAR UN FORMULARIOO PRESUPUESTADOR INTERACTIVO
 // QUE PERMITA PRESUPUESTAS A PARTIR DE OPCIONES QUE VAYA SELECCIONANDO
 // EL CLIENTE. 
 // ESTE PRIMER OBJETO REMITE A LO QUE PODRIA SER EL COMIENZO, DONDE INGRESAN 
@@ -14,6 +14,8 @@
 // Y QUE EL PRESUPUESTADOR SIRVA PARA ORIENTARSE Y PONERSE EN CONCATO PARA DETALLAR CUESTIONES
 // E INCLUSO AJUSTAR EL PRESUPUESTO INICIAL
 
+// EL HTML CORRESPONDE A UN FORMULARIO COMUN CON DATOS PERSONALES Y CONSULTAS YA QUE AUN NO VIMOS
+// COMO INTERACTUAR CON EL HTML
 
 class LogIn{
     constructor(nombre, apellido, correo, telefono){
@@ -22,9 +24,10 @@ class LogIn{
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
-        this.info = ('Hola ' + this.nombre + this.apellido + 'en las proximas horas te enviaremos un mail a ' + this.correo);
-    }
-       comunicado(){
+        this.info = ` Hola ${ this.nombre}  ${this.apellido} en las proximas horas te enviaremos un mail a ${this.correo}`;   
+        }
+       
+        comunicado(){
            console.log(this.info)
        }
 
