@@ -328,3 +328,13 @@ li{
 	margin-top: 10%;
 	margin-bottom: 10%;
 }
+
+// Cotizador
+
+.Contenedor__Cotizador{
+	background-color: $Naranja;
+	margin: 3%;
+	.Contenedor__Cotizador--boton{
+		margin-bottom: 3%;
+	}
+}
