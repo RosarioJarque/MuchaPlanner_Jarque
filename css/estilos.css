@@ -285,3 +285,9 @@ li {
   width: 90%;
   margin-top: 10%;
   margin-bottom: 10%; }
+
+.Contenedor__Cotizador {
+  background-color: #e6914f;
+  margin: 3%; }
+  .Contenedor__Cotizador .Contenedor__Cotizador--boton {
+    margin-bottom: 3%; }
