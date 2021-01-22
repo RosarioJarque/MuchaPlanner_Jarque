@@ -39,28 +39,41 @@
     </nav>      
 </header>
 <section class="row">
-	<div class="col-lg-6 col-md-6 col-xs-6 Contenedor__Cotizador">	
-      <select name="Servicio" class="form-control" style="margin-top: 3%">
+	<div id="msj-error-cotizador"></div>
+  <div class="campo" style="margin: 3%;">
+    <label>Plan Mucha</label>
+    <input type="radio" name="plan" id="miniPlanner"> Mini Planner
+    <input type="radio" name="plan" id="seguimiento"> Planner y Seguimiento
+    <input type="radio" name="plan" id="presencia"> Planner, Seguimiento y Presencia
+    <!-- <select name="Servicio" class="form-control" style="margin-top: 3%">
         <option value="MiniPlanner">Mini Planner</option>
         <option value="PlannerSeguimiento">Planner y Seguimiento</option>
         <option value="Evento Empresarial">Planner, Seguimiento y Presencia</option>
+      </select> -->
+      <br>
+      <label>Tipo de Servicio</label>
+      <select name="eventos" id="tipoServicio">
+        <option value="">--Tipo de servicio--</option>
+        <option value="basico">Lunch</option>
+        <option value="completo">Entrada y Plato Principal</option>
+        <option value="full">Entrada, Plato Principal y Postre</option>
       </select>
       <br>
-      <select name="Tamaño" class="form-control">
-        <option value="Pequeño">De 20 a 50 personas</option>
-        <option value="Mediano">De 50 a 100 personas</option>
-        <option value="Grande">De 100 a 150 personas</option>
-        <option value="Extra Grande">De 150 a 200</option>
-      </select>
-      <br>
-      <select name="eventos" class="form-control">
-        <option value="Cumpleaños">Lunch</option>
-        <option value="Casamientos">Entrada y Plato Principal</option>
-        <option value="Evento Empresarial">Entrada, Plato Principal y Postre</option>
+      <label>Tamaño del evento</label>
+      <select name="Tamaño" id="tamañoEvento">
+        <option value="">--Cantidad de personas--</option>
+        <option value="pequeño">De 20 a 50 personas</option>
+        <option value="mediano">De 50 a 100 personas</option>
+        <option value="grande">De 100 a 150 personas</option>
+        <option value="extraGrande">De 150 a 200</option>
       </select>
         <br>	
-        <input type="submit" name="Calcular Presupuesto" class="form-control Contenedor__Cotizador--boton">
+        <input type="button" onclick="cotizarCatering()" class="" value="cotizar">
       </form>
+      <div class="mensaje" id="msj">Recorda que es una cotización aproximada, el costo puede variar</div>
+      <div id="resumen"></div>
+      <div id="resultado"></div>
+
   </div>
 
 </section>
