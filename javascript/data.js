@@ -1,5 +1,31 @@
-const cotizador = [
-  planMucha = ["mini planner", "planner y seguimiento", "planner, seguimiento y presencia"],
-  tipoServicio = ["lunch", "entrada y plato principal", "entrada, plato princiapal y postre"],
-  tamañoEvento = ["20 a 50 personas", "50 a 100 personas", "100 a 150 personas", "150 a 200 personas"]
-]
+const products = [
+    {
+        "name" : "Focaccia",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
+        "img" : "https://picsum.photos/300/200",
+        "price" : 70,
+        "available": true,
+        tags: ["clasico", "tanto gusto", "bread"]
+    },{
+        "name" : "Bagel",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
+        "img" : "https://picsum.photos/300/200",
+        "price" : 80,
+        "available": true,
+        tags: ["clasico", "tanto gusto", "bread"]
+    },{
+        "name" : "Wraps",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
+        "img" : "https://picsum.photos/300/200",
+        "price" : 60,
+        "available": true,
+        tags: ["clasico", "tanto gusto", "bread"]
+    },{
+        "name" : "Muffins Salados",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
+        "img" : "https://picsum.photos/300/200",
+        "price" : 50,
+        "available": true,
+        tags: ["clasico", "tanto gusto", "bread"]
+    }
+];

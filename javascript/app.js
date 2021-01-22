@@ -1,95 +1,46 @@
-class cotizador{
-    constructor(planMucha, tipoServicio, tamanoEvento){
-        this.planMucha = planMucha;
-        this.tipoServicio = tipoServicio;
-        this.tamanoEvento = tamanoEvento;
-    }
-    cotizarCatering(planMucha, tipoServicio, tamanoEvento){
-        let tipoServicio = document.getElementById('tipoServicio').value;
-        let tamanoEvento = document.getElementById('tamañoEvento').value;
-        let miniPlanner = document.getElementById('miniPlanner');
-        let seguimiento = document.getElementById('seguimiento');
-        let presencia = document.getElementById('presencia');
-
-        let divResumen = document.getElementById('resumen');
-        let divResultado = document.getElementById('resultado');
-
-        let planMucha = "";
-
-        if(miniPlanner.checked){
-          planMucha = 'miniPlanner';
-        } else if (seguimiento.checked){
-          planMucha = 'seguimiento';
-        } else (presencia.checked);{
-          planMucha = 'presencia';
-        }
-      
-        
-    }
+// Funcion para crear un card manipulando el DOM
+function buildProductCard(product){
+    // DIV PADRE 
+    const div = document.createElement('div');
+    
+    const title = domBuilder.h2(product.name);
+    const image = domBuilder.img(product.img);
+    const description = domBuilder.p(product.description);
+    const price = domBuilder.p(product.price);
+    const button = domBuilder.button('Seleccionar','btnProduct');
+    
+    // Aca incluyo los elementos al contenedor (html) DIV 
+    div.appendChild(title);
+    div.appendChild(image);
+    div.appendChild(description);
+    div.appendChild(price);
+    div.appendChild(button);
+    
+    return div;
 }
 
+// Instancio la clase (objeto) que cree en DomBuilder.js
+const domBuilder = new DOMBuilder();
 
+// Funcion para que el codigo para que la app inicie cuando el documentento esta cargado
+window.addEventListener('load', function(){
 
+    // Aca defino que quiero que se creen en el div contenedor que tengo hardcodeado en el html    
+    const productContainer = document.getElementById('productContainer');
 
+// Foreach para recorrer el arry de products y generar el html dinamicamente   
+    products.forEach(function(product){
+    // Hago que la tarjeta se contruya solo si el producto esta disponible
+        if(product.available){
+            // Llamo a la funcion builProductCard par crear la card en cada vuelta
+            const card = buildProductCard(product);
+            // Al productContainer le agrego un hijo (las card que cree)
+            productContainer.appendChild(card);
+        }
+    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// -------------------------------------------------------------------------------------------
-
-// ESTO CORRESPONDE A LA PRIMER ENTREGA, CREO QUE NO VOY A USARLO
-// class LogIn{
-//     constructor(nombre, apellido, correo, telefono){
-
-//         this.nombre = nombre;
-//         this.apellido = apellido;
-//         this.correo = correo;
-//         this.telefono = telefono;
-//         this.info = `Hola ${ this.nombre}  ${this.apellido} en las proximas horas te enviaremos un mail a ${this.correo}`;   
-//         }
-       
-//         comunicado(){
-//            console.log(this.info)
-//        }
-
-
-// }
-
-// let pepe = new LogIn('Pepe', 'Gimenez', 'pepegimenez@gmail.com', '2494218210');
-
-// pepe.comunicado();
+// EN ESTE PUNTO TENGO EL DOM LISTO
+// Ahora voy a acceder a los botones
+// Con querySlectorAll llamo a todos los elementos que tengan una misma clase o id
+    const btnProducts = document.querySelectorAll('.btnProduct');
+})
