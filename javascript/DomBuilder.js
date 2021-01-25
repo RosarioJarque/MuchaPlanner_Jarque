@@ -30,6 +30,7 @@ class DOMBuilder{
         button.textContent = content;
     // Class list es lo que tengo que usar para darle los estilos al html, creando la clase en css
         button.classList.add(className);
+        button.classList.add('cart__button');
         // Metodo que permite agregar atributo al boton
         button.setAttribute('data-id', id);
 

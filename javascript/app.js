@@ -35,6 +35,9 @@ function onSelectClick(event) {
     // Cada vez que selecciona pushea en el array vacio el producto
     selectedProducts.push(selectedProduct);   
     // Ahora esta data la guardo en el local storage
+// En esta variable guardo la data como string(srtingify), xq en local stogare solo puedo guardar n° y string
+// Cuando selecciono el producto, paso de objeto a string y lo guardo en key selectedProducts
+
     localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
 
     // Llamo a la funcion de crear la card del producto select
@@ -77,7 +80,9 @@ window.addEventListener('load', function(){
         }
     });
 
-    // En esta variable guado la data como string
+    // Para recuperarlo, lo necesito como objeto lo convierto asi..
+    // Cuando mi aplicacion inicia lo convierto de string a objeto para poder
+    // Usar el forEach y armo la card del cart
     const cart = JSON.parse(localStorage.getItem('selectedProducts'));
     
     if(cart){

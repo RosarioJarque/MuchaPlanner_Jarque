@@ -331,10 +331,12 @@ li{
 
 // Cotizador
 
-.Contenedor__Cotizador{
-	background-color: $Naranja;
+.muchaDeli__table{
 	margin: 3%;
-	.Contenedor__Cotizador--boton{
-		margin-bottom: 3%;
-	}
+}
+
+.cart__button{
+	background-color: $Naranja;
+	border: none;
+	border-radius:50%;
 }
