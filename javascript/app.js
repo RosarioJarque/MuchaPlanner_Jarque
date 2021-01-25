@@ -34,7 +34,9 @@ function onSelectClick(event) {
     
     // Cada vez que selecciona pushea en el array vacio el producto
     selectedProducts.push(selectedProduct);   
-    
+    // Ahora esta data la guardo en el local storage
+    localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+
     // Llamo a la funcion de crear la card del producto select
     buildCart();
 }
@@ -47,8 +49,10 @@ function buildCart(){
     const card = buildProductCard(lastProduct);
     selectedContainer.appendChild(card);
 
-    totalProductsContainer.textContent = selectedProducts.length;
 }
+
+// totalProductsContainer.textContent = selectedProducts.length;
+
 
 
 // Instancio la clase (objeto) que cree en DomBuilder.js
@@ -62,7 +66,7 @@ window.addEventListener('load', function(){
     const productContainer = document.getElementById('productContainer');
     const selectedContainer = document.getElementById('selectedContainer');
     const totalProductsContainer = document.getElementById('totalProducts');
-// Foreach para recorrer el arry de products y generar el html dinamicamente   
+// Foreach para recorrer el arry de products data y generar el html dinamicamente   
     products.forEach(function(product){
     // Hago que la tarjeta se contruya solo si el producto esta disponible
         if(product.available){
@@ -72,6 +76,18 @@ window.addEventListener('load', function(){
             productContainer.appendChild(card);
         }
     });
+
+    // En esta variable guado la data como string
+    const cart = JSON.parse(localStorage.getItem('selectedProducts'));
+    
+    if(cart){
+// Esto es para que re imprima en la columna del carrito
+        cart.forEach(function(product){
+        const card = buildProductCard(product);
+        selectedContainer.appendChild(card);  
+        });
+    }
+    
 
 // EN ESTE PUNTO TENGO EL DOM LISTO
 // Ahora voy a acceder a los botones
