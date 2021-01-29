@@ -21,6 +21,30 @@ function buildProductCard(product){
     return div;
 }
 
+// Funcion para crear las card del carrito
+
+function buildProductCart(product){
+    // DIV PADRE 
+    const div = document.createElement('div');
+    
+    const title = domBuilder.h2(product.name);
+    const image = domBuilder.img(product.img);
+    const price = domBuilder.p(product.price);
+    
+    // Aca incluyo los elementos al contenedor (html) DIV 
+    div.appendChild(title);
+    div.appendChild(image);
+    div.appendChild(price);
+    
+    return div;
+}
+
+
+
+
+
+
+
 // Funcion para el boton cuando hace click
 function onSelectClick(event) {
     // Con esto me devuelve el ID del boton cuando hago click
@@ -49,7 +73,7 @@ function onSelectClick(event) {
 function buildCart(){
     // Cada vez que selecciono un producto voy a obtener un card con los seleccionados
     const lastProduct = selectedProducts[selectedProducts.length -1];
-    const card = buildProductCard(lastProduct);
+    const card = buildProductCart(lastProduct);
     selectedContainer.appendChild(card);
 
 }
@@ -66,9 +90,9 @@ let selectedProducts = [];
 // Funcion para que el codigo para que la app inicie cuando el documentento esta cargado
 window.addEventListener('load', function(){
     // Aca defino que quiero que se creen en el div contenedor que tengo hardcodeado en el html    
-    const productContainer = document.getElementById('productContainer');
-    const selectedContainer = document.getElementById('selectedContainer');
-    const totalProductsContainer = document.getElementById('totalProducts');
+    const productContainer = $('#productContainer');
+    const selectedContainer = $('#selectedContainer');
+    const totalProductsContainer = $('#totalProducts');
 // Foreach para recorrer el arry de products data y generar el html dinamicamente   
     products.forEach(function(product){
     // Hago que la tarjeta se contruya solo si el producto esta disponible
@@ -76,7 +100,8 @@ window.addEventListener('load', function(){
             // Llamo a la funcion builProductCard par crear la card en cada vuelta
             const card = buildProductCard(product);
             // Al productContainer le agrego un hijo (las card que cree)
-            productContainer.appendChild(card);
+            // productContainer.appendChild(card);
+            $(productContainer).append(card)
         }
     });
 
@@ -89,7 +114,7 @@ window.addEventListener('load', function(){
 // Esto es para que re imprima en la columna del carrito
         cart.forEach(function(product){
         const card = buildProductCard(product);
-        selectedContainer.appendChild(card);  
+        $(selectedContainer).append(card);  
         });
     }
     
@@ -104,4 +129,27 @@ window.addEventListener('load', function(){
         btnProduct.addEventListener('click', onSelectClick );
     })
 })
+
+
+
+
+
+
+// $(document).ready(function(){
+//     // Aca defino que quiero que se creen en el div contenedor que tengo hardcodeado en el html    
+//     const productContainer = $('#productContainer');
+//     const selectedContainer = $('#selectedContainer');
+//     const totalProductsContainer = $('#totalProducts');
+// // Foreach para recorrer el arry de products data y generar el html dinamicamente   
+//     products.forEach(function(product){
+//     // Hago que la tarjeta se contruya solo si el producto esta disponible
+//         if(product.available){
+//             // Llamo a la funcion builProductCard par crear la card en cada vuelta
+//             const card = buildProductCard(product);
+//             // Al productContainer le agrego un hijo (las card que cree)
+//            $(productContainer).append(card)
+//         }
+//     })
+
+
 
