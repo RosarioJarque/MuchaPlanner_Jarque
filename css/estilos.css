@@ -286,10 +286,12 @@ li {
   margin-top: 10%;
   margin-bottom: 10%; }
 
-.muchaDeli__table {
+/* Mucha-Deli */
+.card-estilos {
   margin: 3%; }
 
-.cart__button {
-  background-color: #e6914f;
-  border: none;
-  border-radius: 50%; }
+.menuCarrito {
+  margin: 3%;
+  width: 80%;
+  background-color: white;
+  align-items: center; }

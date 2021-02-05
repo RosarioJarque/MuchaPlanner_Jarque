@@ -1,39 +1,31 @@
-// Esta clase va a permitir crear elementos en el HTML sin especificacion
+// Funciones que crea las card del catalogo. El parametro viene del product de forEach
+function buildCatalogo(product){
 
-class DOMBuilder{
-    constructor(){
+    const htmlCatalogo =
+                        
+                        `<div class="card card-estilos" style="width: 18rem;">
+                            <img src="${product.img}">
+                            <div class="card-body">
+                                <h5 class="title">${product.name}</h5>
+                                <p class="card-text">${product.description}</p>
+                                <p class="card-text">${product.price}</p>
+                                <input type="button" class="btn btn-secondary btnProduct" data-id="${product.id}" value="Agregar">
+                            </div>
+                        </div>`;
 
-    }
-    h2(title){
-        const h2 = document.createElement('h2');
-        h2.textContent = title;
-        return h2;
-    }
+    return htmlCatalogo;
+   
+}
 
-    img(src) {
-        const img = document.createElement('img');
-        img.src = src;
 
-        return img;
-    }
+function BuildGrillaCarrito(product){
 
-    p(content){
-        const p = document.createElement('p');
-        p.textContent = content;
-
-        return p;
-    }
-
-    // El parametro id es para identificar el boton y el producto que selecciono
-    button(content, className, id){
-        const button = document.createElement('button');
-        button.textContent = content;
-    // Class list es lo que tengo que usar para darle los estilos al html, creando la clase en css
-        button.classList.add(className);
-        button.classList.add('cart__button');
-        // Metodo que permite agregar atributo al boton
-        button.setAttribute('data-id', id);
-
-        return button;
-    }
+    const htmlGrillaCarrito =
+                        
+                            `<td>${product.name}</td>
+                            <td>""</td>
+                            <td>${product.price}</td>`
+                        
+    return htmlGrillaCarrito;
+   
 }

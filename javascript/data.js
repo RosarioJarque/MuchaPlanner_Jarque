@@ -4,7 +4,7 @@ const products = [
         "name" : "Sandwich",
         "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
         "img" : "../img/data4.jpg",
-        "price" : 70,
+        "price" : 2400,
         "available": true,
         tags: ["clasico", "tanto gusto", "bread"]
     },{
@@ -12,7 +12,7 @@ const products = [
         "name" : "Bagel",
         "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
         "img" : "../img/data2.jpg",
-        "price" : 80,
+        "price" : 2160,
         "available": true,
         tags: ["clasico", "tanto gusto", "bread"]
     },{
@@ -20,7 +20,7 @@ const products = [
         "name" : "Wraps",
         "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
         "img" : "../img/data1.jpg",
-        "price" : 60,
+        "price" : 1500,
         "available": true,
         tags: ["clasico", "tanto gusto", "bread"]
     },{
@@ -28,7 +28,7 @@ const products = [
         "name" : "Muffins Salados",
         "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tempora porro doloremque consectetur nam cum nulla illo et, possimus facere sapiente ipsam quasi, inventore totam harum odit tempore animi facilis.",
         "img" : "../img/data3.jpg",
-        "price" : 50,
+        "price" : 1200,
         "available": true,
         tags: ["clasico", "tanto gusto", "bread"]
     }

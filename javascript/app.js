@@ -1,128 +1,126 @@
-// Funcion para crear un card manipulando el DOM
-function buildProductCard(product){
-    // DIV PADRE 
-    const div = document.createElement('div');
-    div.classList.add('card');
-   
+let selectedProducts = []; 
 
-    const title = domBuilder.h2(product.name);
-    const image = domBuilder.img(product.img);
-    const description = domBuilder.p(product.description);
-    const price = domBuilder.p(product.price);
-    const button = domBuilder.button('Seleccionar','btnProduct', product.id);
-    
-
-
-    // Aca incluyo los elementos al contenedor (html) DIV 
-    div.appendChild(title);
-    div.appendChild(image);
-    div.appendChild(description);
-    div.appendChild(price);
-    div.appendChild(button);
-    
-    return div;
-}
-
-// Funcion para crear las card del carrito
-
-function buildProductCart(product){
-    // DIV PADRE 
-    const div = document.createElement('div');
-    
-    const title = domBuilder.h2(product.name);
-    const image = domBuilder.img(product.img);
-    const price = domBuilder.p(product.price);
-    
-    // Aca incluyo los elementos al contenedor (html) DIV 
-    div.appendChild(title);
-    div.appendChild(image);
-    div.appendChild(price);
-    
-    return div;
-}
-
-
-// Funcion para el boton cuando hace click
-function onSelectClick(event) {
-    // Con esto me devuelve el ID del boton cuando hago click
-    const idProduct = event.target.dataset.id;
-    // Con esto tomo el objeto del data que coincida con el id seleccionado
+// Funcion para el boton 
+function onSelectClick(event){
+    // Igual el idProduct al objeto que toma el dataset por data-id
+    const idProduct = event.target.dataset.id
+    // find nos devuelve el primer objeto que cumple la condicion (id)
     selectedProduct = products.find(function(product){
-        if (product.id === idProduct){
+        if(product.id === idProduct){
             return product;
         }
     });
-    
-    // Cada vez que selecciona pushea en el array vacio el producto
-    selectedProducts.push(selectedProduct);   
-    // Ahora esta data la guardo en el local storage
-// En esta variable guardo la data como string(srtingify), xq en local stogare solo puedo guardar n° y string
-// Cuando selecciono el producto, paso de objeto a string y lo guardo en key selectedProducts
 
-    localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+    //Agrego al array nuevo lo seleccionado 
+selectedProducts.push(selectedProduct);
+// Guardo el array de productos seleccionados en el LocalSotorage. Con JSON.stringify convierto el objeto a string
+localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
 
-    // Llamo a la funcion de crear la card del producto select
-    buildCart();
+
+// Llamo a la funcion que crea la grilla
+grillaCarrito();
+
 }
 
-// Funcion para generar una card de los productos seleccionados
 
-function buildCart(){
-    // Cada vez que selecciono un producto voy a obtener un card con los seleccionados
+// funcion para crear la grilla carrito
+function grillaCarrito () {
+    // Esto es para que cuando haga el for each solo tome el ultimo y no encadene contando 1, 12, 123.
     const lastProduct = selectedProducts[selectedProducts.length -1];
-    const card = buildProductCart(lastProduct);
-    selectedContainer.appendChild(card);
-
+    const grilla = BuildGrillaCarrito(lastProduct);
+    
+    selectedContainer.innerHTML += grilla;
 }
-
-// totalProductsContainer.textContent = selectedProducts.length;
-
-
-
-// Instancio la clase (objeto) que cree en DomBuilder.js
-const domBuilder = new DOMBuilder();
-// Este array se va a llenar con las selecciones que se hagan
-let selectedProducts = [];
-
-// Funcion para que el codigo para que la app inicie cuando el documentento esta cargado
+    
 window.addEventListener('load', function(){
-    // Aca defino que quiero que se creen en el div contenedor que tengo hardcodeado en el html    
-    const productContainer = $('#productContainer');
-    const selectedContainer = $('#selectedContainer');
-    const totalProductsContainer = $('#totalProducts');
-// Foreach para recorrer el arry de products data y generar el html dinamicamente   
+   
+    // Esta variable guarda el lugar donde creo el catalogo
+    const productContainer = document.getElementById('productContainer');
+    // Esta variable guarda el lugar donde creo la grilla
+    const selectedContainer = document.getElementById('selectedContainer');
+    
+    // En cada vuelta recibo un item del data. Que es Product, el que uso de paramentro.
     products.forEach(function(product){
-    // Hago que la tarjeta se contruya solo si el producto esta disponible
         if(product.available){
-            // Llamo a la funcion builProductCard par crear la card en cada vuelta
-            const card = buildProductCard(product);
-            // Al productContainer le agrego un hijo (las card que cree)
-            // productContainer.appendChild(card);
-            $(productContainer).append(card)
+            const card = buildCatalogo(product);
+            productContainer.innerHTML += card; 
         }
     });
 
-    // Para recuperarlo, lo necesito como objeto lo convierto asi..
-    // Cuando mi aplicacion inicia lo convierto de string a objeto para poder
-    // Usar el forEach y armo la card del cart
+    // Vuelvo a convertir en objeto lo que tomo de storage
     const cart = JSON.parse(localStorage.getItem('selectedProducts'));
-    
-//     if(cart){
-// // Esto es para que re imprima en la columna del carrito
-//         cart.forEach(function(product){
-//         const card = buildProductCard(product);
-//         $(selectedContainer).append(card);  
-//         });
-//     }
+
+    // Imprime lo que guarda el storage
+    if(cart) {
+        cart.forEach(function(product){
+            const grilla = BuildGrillaCarrito(product);
+            selectedContainer.innerHTML += grilla;    
+        });
+    }
     
 
-// EN ESTE PUNTO TENGO EL DOM LISTO
-// Ahora voy a acceder a los botones
-// Con querySlectorAll llamo a todos los elementos que tengan una misma clase o id
+
+
+
+    // DOM Creado, le doy funcionalidad a btn
+    // QuerySelectorAll va a tomar a TODOS los botones y genera un array
     const btnProducts = document.querySelectorAll('.btnProduct');
-    // hago un forEach para recorrer todos los botones
+    // Recorro todos los botones
     btnProducts.forEach(function(btnProduct){
-        // evento para que escuche el click
-        btnProduct.addEventListener('click', onSelectClick );
+        btnProduct.addEventListener('click', onSelectClick);
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const divPadre = document.createElement('div');
+    // divPadre.classList.add('card', 'card-estilos');
+        
+    //     const image = document.createElement('img');
+    //     image.src = product.img;
+    //     const divHijo = document.createElement('div');
+    //     divHijo.classList.add('card-body');
+
+    //         const title = document.createElement('h5');
+    //         title.textContent = product.name;
+    //         title.classList.add('card-title');
+
+    //         const description = document.createElement('p');
+    //         description.textContent = product.description;
+    //         description.classList.add('card-text');
+            
+    //         const price = document.createElement('p');
+    //         price.textContent = product.price;
+    //         price.classList.add('card-text');
+            
+    //         const button = document.createElement('button');
+    //         button.textContent = "Agregar";
+    //         button.classList.add('btn', 'btn-secondary', 'btnProduct');
+
+    // divPadre.appendChild(image);
+    // divPadre.appendChild(divHijo);
+        
+    //     divHijo.appendChild(title);
+    //     divHijo.appendChild(description);
+    //     divHijo.appendChild(price);
+    //     divHijo.appendChild(button);
+
+    // return divPadre;
+
+    // cambiar innerhtml por         // productContainer.appendChild(card);
+

@@ -40,19 +40,31 @@
             </div>
         </nav>
     </header>
+    <!-- Seccion que crea el catalogo -->
     <section>   
-<table class="muchaDeli__table">
-    <tr>
-        <td>
-            <div id="productContainer"></div>
-        </td>
-        <td> 
-            <div id="selectedContainer"></div>
-            <!-- salida que muestra cantidad de elementos en carrito -->
-            <p id="totalProducts"></p>
-        </td>
-    </tr>
-</table>
+        <div id="productContainer" class="card-group row"></div>
+    
+        </div>
+    </section>
+    <!-- Seccion que crea la grilla del carrito -->
+    <section>
+        <div>
+            <div class="menuCarrito">
+                <table class="table col-lg-12">
+                    <thead>
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">cantidad</th>
+                        <th scope="col">Precio</th>
+                      </tr>
+                    </thead>
+                    <tbody id="selectedContainer">
+                     <td id="totalProducts"></td> 
+                    </tbody>
+                  </table>
+                  
+            </div>
+          </div>
     </section>
     <footer class="container-fluid Footer">   
         <div class="row justify-content-center Footer__Row">
