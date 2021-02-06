@@ -56,6 +56,7 @@ window.addEventListener('load', function(){
             const grilla = BuildGrillaCarrito(product);
             selectedContainer.innerHTML += grilla;    
         });
+        
     }
     
 
