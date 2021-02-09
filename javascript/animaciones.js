@@ -1,16 +1,3 @@
-$("#animacion-carrito").click(function(){
-    $("#carrito-show").show();
-})
-
-
-// clase display none en bootstrap
-// d-none
-
-
-// let animacionbody = $()
-
-// Aca oculto algo
-// $('llamo a algo').hide();
-// Aca mueustro
-// $('').show
-
+$("h1").show(2000);
+$("h2").show(2000);
+$("section").show(2500);
