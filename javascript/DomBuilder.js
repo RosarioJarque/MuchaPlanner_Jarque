@@ -9,7 +9,7 @@ function buildCatalogo(product){
                                 <h5 class="title">${product.name}</h5>
                                 <p class="card-text">${product.description}</p>
                                 <p class="card-text">${product.price}</p>
-                                <input type="button" class="btn btn-secondary btnProduct" data-id="${product.id}" value="Agregar">
+                                <input type="button" id= "btnanimaciones" class="btn btn-secondary btnProduct" data-id="${product.id}" value="Agregar">
                             </div>
                         </div>`;
 
